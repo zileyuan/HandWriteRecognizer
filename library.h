@@ -16,7 +16,7 @@
  * 返回 1，资源异常
  * 返回 2，加载model失败
 **/
-extern "C" DECL_EXPORT int hwr_init(const char* file_path, const int& width, const int& height);
+extern "C" DECL_EXPORT int hwr_init(const char *file_path, const int &width, const int &height);
 
 /**
  * 说明 加入笔画的路径点
@@ -26,7 +26,7 @@ extern "C" DECL_EXPORT int hwr_init(const char* file_path, const int& width, con
  * 返回 1，资源异常
  * 返回 2，加入路径点异常
 **/
-extern "C" DECL_EXPORT int hwr_add_point(const double& x, const double& y);
+extern "C" DECL_EXPORT int hwr_add_point(const double &x, const double &y);
 
 /**
  * 说明 识别之前传入的路径点为可能的文字数组
@@ -35,7 +35,7 @@ extern "C" DECL_EXPORT int hwr_add_point(const double& x, const double& y);
  * 返回 1，资源异常
  * 返回 2，识别异常
 **/
-extern "C" DECL_EXPORT int hwr_recognize(char** words);
+extern "C" DECL_EXPORT int hwr_recognize(char **words);
 
 /**
  * 说明 识别完成一个文字后，清除之前的路径点
