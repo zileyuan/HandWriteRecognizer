@@ -35,7 +35,7 @@ int add_point(double x, double y);
 int recognize(char **words);
 
 /**
- * 说明 识别完成一个文字后，进行清除之前的路径点
+ * 说明 识别完成一个文字后，清除之前的路径点
  * 返回 0，成功
  * 返回 1，资源异常
 **/
