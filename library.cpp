@@ -10,7 +10,7 @@ HandWriteRecognizer::Character* character = NULL;
 HandWriteRecognizer::Recognizer* recognizer = NULL;
 
 
-int init(const char* file_path, const int width, const int height) {
+int hwr_init(const char* file_path, const int width, const int height) {
     if (recognizer == NULL) {
         recognizer = new Recognizer();
     }
@@ -24,7 +24,7 @@ int init(const char* file_path, const int width, const int height) {
     return 1;
 }
 
-int add_point(const double x, const double y) {
+int hwr_add_point(const double x, const double y) {
     if (character) {
         if (character->addPoint(strokeId, x, y)) {
             return 0;
@@ -34,7 +34,7 @@ int add_point(const double x, const double y) {
     return 1;
 }
 
-int recognize(char **words) {
+int hwr_recognize(char **words) {
     if (recognizer && character) {
         std::vector<std::string> resultWords;
         if (recognizer->recognize(*character, resultWords, 10)) {
@@ -48,7 +48,7 @@ int recognize(char **words) {
     return 1;
 }
 
-int clear() {
+int hwr_clear() {
     if (character) {
         character->clear();
         strokeId++;
@@ -57,7 +57,7 @@ int clear() {
     return 1;
 }
 
-void destroy() {
+void hwr_destroy() {
     if (character) {
         delete character;
         character = NULL;

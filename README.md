@@ -14,7 +14,7 @@
  * 返回 1，资源异常
  * 返回 2，加载model失败
 **/
-int init(const char* file_path, int width, int height);
+int hwr_init(const char* file_path, int width, int height);
 ```
 
 ### 加入路径点
@@ -28,7 +28,7 @@ int init(const char* file_path, int width, int height);
  * 返回 1，资源异常
  * 返回 2，加入路径点异常
 **/
-int add_point(double x, double y);
+int hwr_add_point(double x, double y);
 ```
 
 ### 进行识别
@@ -41,7 +41,7 @@ int add_point(double x, double y);
  * 返回 1，资源异常
  * 返回 2，识别异常
 **/
-int recognize(char *words[]);
+int hwr_recognize(char *words[]);
 ```
 
 ### 清除路径点
@@ -52,7 +52,7 @@ int recognize(char *words[]);
  * 返回 0，成功
  * 返回 1，资源异常
 **/
-int clear();
+int hwr_clear();
 ```
 
 ### 销毁DLL资源
@@ -61,16 +61,16 @@ int clear();
 /**
  * 说明 卸载DLL之前调用，用于清除之前分配的资源
 **/
-void destroy();
+void hwr_destroy();
 ```
 
 ## Delphi调用示例代码
 
 ```pascal
-function init(file_path: PChar; width: Integer; height: Integer): Integer; stdcall; external 'libhwr.dll';
-function add_point(x: Double; y: Double): Integer; stdcall; external 'libhwr.dll';
-function recognize(words: Pointer{PChar}): Integer; stdcall; external 'libhwr.dll';
-function clear(): Integer; stdcall; external 'libhwr.dll';
-procedure destroy(); stdcall; external 'libhwr.dll';
+function hwr_init(file_path: PChar; width: Integer; height: Integer): Integer; stdcall; external 'libhwr.dll';
+function hwr_add_point(x: Double; y: Double): Integer; stdcall; external 'libhwr.dll';
+function hwr_recognize(words: Pointer{PChar}): Integer; stdcall; external 'libhwr.dll';
+function hwr_clear(): Integer; stdcall; external 'libhwr.dll';
+procedure hwr_destroy(); stdcall; external 'libhwr.dll';
 ```
 

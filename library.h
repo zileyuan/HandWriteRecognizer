@@ -17,7 +17,7 @@
  * 返回 1，资源异常
  * 返回 2，加载model失败
 **/
-extern "C" DECL_EXPORT int STDCALL init(const char* file_path, const int width, const int height);
+extern "C" DECL_EXPORT int STDCALL hwr_init(const char* file_path, const int width, const int height);
 
 /**
  * 说明 加入笔画的路径点
@@ -27,7 +27,7 @@ extern "C" DECL_EXPORT int STDCALL init(const char* file_path, const int width, 
  * 返回 1，资源异常
  * 返回 2，加入路径点异常
 **/
-extern "C" DECL_EXPORT int STDCALL add_point(const double x, const double y);
+extern "C" DECL_EXPORT int STDCALL hwr_add_point(const double x, const double y);
 
 /**
  * 说明 识别之前传入的路径点为可能的文字数组
@@ -36,18 +36,18 @@ extern "C" DECL_EXPORT int STDCALL add_point(const double x, const double y);
  * 返回 1，资源异常
  * 返回 2，识别异常
 **/
-extern "C" DECL_EXPORT int STDCALL recognize(char **words);
+extern "C" DECL_EXPORT int STDCALL hwr_recognize(char **words);
 
 /**
  * 说明 识别完成一个文字后，清除之前的路径点
  * 返回 0，成功
  * 返回 1，资源异常
 **/
-extern "C" DECL_EXPORT int STDCALL clear();
+extern "C" DECL_EXPORT int STDCALL hwr_clear();
 
 /**
  * 说明 卸载DLL之前调用，用于清除之前分配的资源
 **/
-extern "C" DECL_EXPORT void STDCALL destroy();
+extern "C" DECL_EXPORT void STDCALL hwr_destroy();
 
 #endif //HWR_LIBRARY_H
