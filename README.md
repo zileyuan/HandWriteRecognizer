@@ -44,7 +44,7 @@ int add_point(double x, double y);
 int recognize(char **words);
 ```
 
-清除路径点
+### 清除路径点
 
 ```c++
 /**
