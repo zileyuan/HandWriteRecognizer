@@ -69,7 +69,7 @@ extern "C" DECL_EXPORT void STDCALL hwr_destroy();
 ```pascal
 function hwr_init(file_path: PChar; width: Integer; height: Integer): Integer; stdcall; external 'libhwr.dll';
 function hwr_add_point(x: Double; y: Double): Integer; stdcall; external 'libhwr.dll';
-function hwr_recognize(words: Pointer{PChar}): Integer; stdcall; external 'libhwr.dll';
+function hwr_recognize(words: Pointer): Integer; stdcall; external 'libhwr.dll';
 function hwr_clear(): Integer; stdcall; external 'libhwr.dll';
 procedure hwr_destroy(); stdcall; external 'libhwr.dll';
 ```
