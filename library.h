@@ -1,6 +1,9 @@
 #ifndef HWR_LIBRARY_H
 #define HWR_LIBRARY_H
 
+//#define DECL_EXPORT __declspec(dllexport)
+#define DECL_EXPORT __attribute__((visibility("default")))
+
 #include <string>
 #include <vector>
 
@@ -13,7 +16,7 @@
  * 返回 1，资源异常
  * 返回 2，加载model失败
 **/
-int init(const char* file_path, int width, int height);
+extern "C" DECL_EXPORT int init(const char* file_path, int width, int height);
 
 /**
  * 说明 加入笔画的路径点
@@ -23,7 +26,7 @@ int init(const char* file_path, int width, int height);
  * 返回 1，资源异常
  * 返回 2，加入路径点异常
 **/
-int add_point(double x, double y);
+extern "C" DECL_EXPORT int add_point(double x, double y);
 
 /**
  * 说明 识别之前传入的路径点为可能的文字数组
@@ -32,18 +35,18 @@ int add_point(double x, double y);
  * 返回 1，资源异常
  * 返回 2，识别异常
 **/
-int recognize(char **words);
+extern "C" DECL_EXPORT int recognize(char **words);
 
 /**
  * 说明 识别完成一个文字后，清除之前的路径点
  * 返回 0，成功
  * 返回 1，资源异常
 **/
-int clear();
+extern "C" DECL_EXPORT int clear();
 
 /**
  * 说明 卸载DLL之前调用，用于清除之前分配的资源
 **/
-void destroy();
+extern "C" DECL_EXPORT void destroy();
 
 #endif //HWR_LIBRARY_H
