@@ -5,6 +5,8 @@
 #include <fstream>
 #include <regex>
 
+#define MAXFLOAT    0x1.fffffep+127f
+
 #define DEAFULT_WIDTH 1000
 #define DEAFULT_HEIGHT 1000
 
