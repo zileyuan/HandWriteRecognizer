@@ -14,12 +14,17 @@ int hwr_init(const char* file_path, const int& width, const int& height) {
     if (recognizer == NULL) {
         recognizer = new Recognizer();
     }
-    if (recognizer) {
+    if (character == NULL) {
+        character = new Character();
+    }
+    if (recognizer && character) {
         if (recognizer->loadModelFile(file_path)) {
             character->initSize(width, height);
             return 0;
         }
         return 2;
+    } else {
+        hwr_destroy();
     }
     return 1;
 }
