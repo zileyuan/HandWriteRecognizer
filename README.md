@@ -14,7 +14,7 @@
  * 返回 1，资源异常
  * 返回 2，加载model失败
 **/
-int hwr_init(const char* file_path, int width, int height);
+extern "C" DECL_EXPORT int STDCALL hwr_init(const char* file_path, const int width, const int height);
 ```
 
 ### 加入路径点
@@ -28,7 +28,7 @@ int hwr_init(const char* file_path, int width, int height);
  * 返回 1，资源异常
  * 返回 2，加入路径点异常
 **/
-int hwr_add_point(double x, double y);
+extern "C" DECL_EXPORT int STDCALL hwr_add_point(const double x, const double y);
 ```
 
 ### 进行识别
@@ -41,7 +41,7 @@ int hwr_add_point(double x, double y);
  * 返回 1，资源异常
  * 返回 2，识别异常
 **/
-int hwr_recognize(char *words[]);
+extern "C" DECL_EXPORT int STDCALL hwr_recognize(char **words);
 ```
 
 ### 清除路径点
@@ -52,7 +52,7 @@ int hwr_recognize(char *words[]);
  * 返回 0，成功
  * 返回 1，资源异常
 **/
-int hwr_clear();
+extern "C" DECL_EXPORT int STDCALL hwr_clear();
 ```
 
 ### 销毁DLL资源
@@ -61,7 +61,7 @@ int hwr_clear();
 /**
  * 说明 卸载DLL之前调用，用于清除之前分配的资源
 **/
-void hwr_destroy();
+extern "C" DECL_EXPORT void STDCALL hwr_destroy();
 ```
 
 ## Delphi调用示例代码
