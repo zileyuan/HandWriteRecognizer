@@ -41,7 +41,7 @@ int add_point(double x, double y);
  * 返回 1，资源异常
  * 返回 2，识别异常
 **/
-int recognize(char **words);
+int recognize(char *words[]);
 ```
 
 ### 清除路径点
@@ -69,7 +69,7 @@ void destroy();
 ```pascal
 function init(file_path: PChar; width: Integer; height: Integer): Integer; stdcall; external 'libhwr.dll';
 function add_point(x: Double; y: Double): Integer; stdcall; external 'libhwr.dll';
-//function recognize(words: pointer{PChar}): Integer; stdcall; external 'libhwr.dll';
+function recognize(words: Pointer{PChar}): Integer; stdcall; external 'libhwr.dll';
 function clear(): Integer; stdcall; external 'libhwr.dll';
 procedure destroy(); stdcall; external 'libhwr.dll';
 ```
