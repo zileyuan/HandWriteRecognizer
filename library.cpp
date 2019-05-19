@@ -10,12 +10,12 @@ HandWriteRecognizer::Character* character = NULL;
 HandWriteRecognizer::Recognizer* recognizer = NULL;
 
 
-int init(const char* filePath, int width, int height) {
+int init(const char* file_path, int width, int height) {
     if (recognizer == NULL) {
         recognizer = new Recognizer();
     }
     if (recognizer) {
-        if (recognizer->loadModelFile(filePath)) {
+        if (recognizer->loadModelFile(file_path)) {
             character->initSize(width, height);
             return 0;
         }
