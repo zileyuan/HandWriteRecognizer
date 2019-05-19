@@ -14,7 +14,7 @@
  * 返回 1，资源异常
  * 返回 2，加载model失败
 **/
-extern "C" DECL_EXPORT int STDCALL hwr_init(const char* file_path, const int width, const int height);
+extern "C" DECL_EXPORT int STDCALL hwr_init(const char* file_path, const int& width, const int& height);
 ```
 
 ### 加入路径点
@@ -28,7 +28,7 @@ extern "C" DECL_EXPORT int STDCALL hwr_init(const char* file_path, const int wid
  * 返回 1，资源异常
  * 返回 2，加入路径点异常
 **/
-extern "C" DECL_EXPORT int STDCALL hwr_add_point(const double x, const double y);
+extern "C" DECL_EXPORT int STDCALL hwr_add_point(const double& x, const double& y);
 ```
 
 ### 进行识别
@@ -41,7 +41,7 @@ extern "C" DECL_EXPORT int STDCALL hwr_add_point(const double x, const double y)
  * 返回 1，资源异常
  * 返回 2，识别异常
 **/
-extern "C" DECL_EXPORT int STDCALL hwr_recognize(char **words);
+extern "C" DECL_EXPORT int STDCALL hwr_recognize(char** words);
 ```
 
 ### 清除路径点
