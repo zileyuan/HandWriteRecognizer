@@ -65,10 +65,10 @@ void destroy();
 ## Delphi调用示例代码
 
 ```pascal
-function init(file_path: PChar, width: Integer, height: Integer): Integer; stdcall; external 'hwr.dll';
-function add_point(x: double, y: double): Integer; stdcall; external 'hwr.dll';
-function recognize(words: pointer{PChar}): Integer; stdcall; external 'hwr.dll';
-function clear(): Intyeger; stdcall; external 'hwr.dll';
-procedure destroy(); stdcall; external 'hwr.dll';
+function init(file_path: PChar; width: Integer; height: Integer): Integer; stdcall; external 'libhwr.dll';
+function add_point(x: Double; y: Double): Integer; stdcall; external 'libhwr.dll';
+//function recognize(words: pointer{PChar}): Integer; stdcall; external 'libhwr.dll';
+function clear(): Integer; stdcall; external 'libhwr.dll';
+procedure destroy(); stdcall; external 'libhwr.dll';
 ```
 
