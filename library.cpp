@@ -10,7 +10,7 @@ HandWriteRecognizer::Character* character = NULL;
 HandWriteRecognizer::Recognizer* recognizer = NULL;
 
 
-int hwr_init(const char *file_path, const int &width, const int &height) {
+int hwr_init(char *file_path, int width, int height) {
     if (recognizer == NULL) {
         recognizer = new Recognizer();
     }
@@ -29,7 +29,7 @@ int hwr_init(const char *file_path, const int &width, const int &height) {
     return 1;
 }
 
-int hwr_add_point(const double &x, const double &y) {
+int hwr_add_point(double x, double y) {
     if (character) {
         if (character->addPoint(strokeId, x, y)) {
             return 0;
