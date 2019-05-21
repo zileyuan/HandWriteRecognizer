@@ -22,13 +22,14 @@ extern "C" DECL_EXPORT int hwr_init(const char *file_path, int width, int height
 ```c++
 /**
  * 说明 加入笔画的路径点
+ * 参数 strokeId，笔画的编号
  * 参数 x，路径点x坐标
  * 参数 y，路径点y坐标
  * 返回 0，成功
  * 返回 1，资源异常
  * 返回 2，加入路径点异常
 **/
-extern "C" DECL_EXPORT int hwr_add_point(double x, double y);
+extern "C" DECL_EXPORT int hwr_add_point(int strokeId, double x, double y);
 ```
 
 ### 进行识别
@@ -68,7 +69,7 @@ extern "C" DECL_EXPORT void hwr_destroy();
 
 ```pascal
 function hwr_init(file_path: PChar; width: Integer; height: Integer): Integer; cdecl; external 'libhwr.dll';
-function hwr_add_point(x: Double; y: Double): Integer; cdecl; external 'libhwr.dll';
+function hwr_add_point(int strokeId, x: Double; y: Double): Integer; cdecl; external 'libhwr.dll';
 function hwr_recognize(words: PChar): Integer; cdecl; external 'libhwr.dll';
 function hwr_clear(): Integer; cdecl; external 'libhwr.dll';
 procedure hwr_destroy(); cdecl; external 'libhwr.dll';

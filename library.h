@@ -20,13 +20,14 @@ extern "C" DECL_EXPORT int hwr_init(const char *file_path, int width, int height
 
 /**
  * 说明 加入笔画的路径点
+ * 参数 strokeId，笔画的编号
  * 参数 x，路径点x坐标
  * 参数 y，路径点y坐标
  * 返回 0，成功
  * 返回 1，资源异常
  * 返回 2，加入路径点异常
 **/
-extern "C" DECL_EXPORT int hwr_add_point(double x, const double y);
+extern "C" DECL_EXPORT int hwr_add_point(int strokeId, double x, const double y);
 
 /**
  * 说明 识别之前传入的路径点为可能的文字数组
