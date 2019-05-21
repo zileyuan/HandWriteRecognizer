@@ -53,7 +53,7 @@ int hwr_recognize(char *words) {
             copy(resultWords.begin(),resultWords.end(), std::ostream_iterator<std::string>(ss, delimiter.c_str()));
             std::string result = ss.str();
             Base64Encoder encoder;
-            std::string base64_result = encoder.EncodeString(result).data();
+            std::string base64_result = encoder.EncodeString(result);
 //            result = accumulate(begin(resultWords), end(resultWords), result);
 //            words = (char *)malloc(result.length() * sizeof(char));
             result.copy(words, base64_result.length(), 0);
