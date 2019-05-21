@@ -5,7 +5,7 @@
 #include <iterator>
 #include <sstream>
 #include "hand_write_recognizer.h"
-#include "base64_encoder.h"
+#include "base64.h"
 
 using namespace HandWriteRecognizer;
 
@@ -50,10 +50,10 @@ int hwr_recognize(char *words) {
             std::string delimiter=",";
             copy(resultWords.begin(),resultWords.end(), std::ostream_iterator<std::string>(ss, delimiter.c_str()));
             std::string result = ss.str();
-            Base64Encoder encoder;
-            std::string base64_result = encoder.EncodeString(result);
-            result.copy(words, base64_result.length(), 0);
-            words[base64_result.length()] = '\0'; //填充结束符
+            std::string encode_str;
+            Base64Base::Encode(result, &encode_str);
+            result.copy(words, encode_str.length(), 0);
+            words[encode_str.length()] = '\0'; //填充结束符
             return 0;
         }
         return 2;
