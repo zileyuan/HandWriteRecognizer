@@ -14,7 +14,7 @@
  * 返回 1，资源异常
  * 返回 2，加载model失败
 **/
-extern "C" DECL_EXPORT int hwr_init(char *file_path, int width, int height);
+extern "C" DECL_EXPORT int hwr_init(const char *file_path, int width, int height);
 ```
 
 ### 加入路径点
@@ -41,7 +41,7 @@ extern "C" DECL_EXPORT int hwr_add_point(double x, double y);
  * 返回 1，资源异常
  * 返回 2，识别异常
 **/
-extern "C" DECL_EXPORT int hwr_recognize(char **words);
+extern "C" DECL_EXPORT int hwr_recognize(char *words);
 ```
 
 ### 清除路径点
@@ -67,11 +67,9 @@ extern "C" DECL_EXPORT void hwr_destroy();
 ## Delphi调用示例代码
 
 ```pascal
-PCharArray = array[0..255] of PChar;
-PPCharArray = ^PCharArray;
 function hwr_init(file_path: PChar; width: Integer; height: Integer): Integer; cdecl; external 'libhwr.dll';
 function hwr_add_point(x: Double; y: Double): Integer; cdecl; external 'libhwr.dll';
-function hwr_recognize(var words: PPCharArray): Integer; cdecl; external 'libhwr.dll';
+function hwr_recognize(words: PChar): Integer; cdecl; external 'libhwr.dll';
 function hwr_clear(): Integer; cdecl; external 'libhwr.dll';
 procedure hwr_destroy(); cdecl; external 'libhwr.dll';
 ```
