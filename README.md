@@ -7,14 +7,14 @@
 ```c++
 /**
  * 说明 在载入DLL后进行资源的初始化函数，在整个使用过程中只需要一次
- * 参数 file_path，model文件的路径，请使用hand_write.model的绝对路径
+ * 参数 model_path，model文件的路径，请使用hand_write.model的绝对路径
  * 参数 width，画板的宽度
  * 参数 height，画板的高度
  * 返回 0，成功
  * 返回 1，资源异常
  * 返回 2，加载model失败
 **/
-extern "C" DECL_EXPORT int hwr_init(const char *file_path, int width, int height);
+extern "C" DECL_EXPORT int hwr_init(const char *model_path, int width, int height);
 ```
 
 ### 加入路径点

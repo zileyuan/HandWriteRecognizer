@@ -13,7 +13,7 @@ HandWriteRecognizer::Character* character = NULL;
 HandWriteRecognizer::Recognizer* recognizer = NULL;
 
 
-int hwr_init(const char *file_path, int width, int height) {
+int hwr_init(const char *model_path, int width, int height) {
     if (recognizer == NULL) {
         recognizer = new Recognizer();
     }
@@ -21,7 +21,7 @@ int hwr_init(const char *file_path, int width, int height) {
         character = new Character();
     }
     if (recognizer && character) {
-        if (recognizer->loadModelFile(file_path)) {
+        if (recognizer->loadModelFile(model_path)) {
             character->initSize(width, height);
             return 0;
         }
