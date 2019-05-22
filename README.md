@@ -68,7 +68,7 @@ extern "C" DECL_EXPORT void hwr_destroy();
 ## Delphi调用示例代码
 
 ```pascal
-function hwr_init(file_path: PChar; width: Integer; height: Integer): Integer; cdecl; external 'libhwr.dll';
+function hwr_init(model_path: PChar; width: Integer; height: Integer): Integer; cdecl; external 'libhwr.dll';
 function hwr_add_point(int strokeId, x: Double; y: Double): Integer; cdecl; external 'libhwr.dll';
 function hwr_recognize(words: PChar): Integer; cdecl; external 'libhwr.dll';
 function hwr_clear(): Integer; cdecl; external 'libhwr.dll';
